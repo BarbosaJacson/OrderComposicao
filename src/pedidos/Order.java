@@ -47,8 +47,6 @@ public class Order {
         return items;
     }
 
-
-
     public String getFormattedMoment() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         return sdf.format(moment);
@@ -86,12 +84,11 @@ public void printOrderSummary(){
         for (OrderItem item : getItems()) {
       String name = item.getProduct().getName();
       double price = item.getProduct().getPrice();
-      int quantidade = item.getQuantity();
+      int quantity = item.getQuantity();
       double subtotal = item.subTotal();
       total+=item.subTotal();
-      System.out.println(name+", " + "$"+String.format("%.2f", price)+", " +"Quantity: "+ quantidade+", "
+      System.out.println(name+", " + "$"+String.format("%.2f", price)+", " +"Quantity: "+ quantity+", "
               +"Subtotal:  "+"$"+String.format("%.2f", subtotal));
-
 
     } System.out.printf("Total price: $%.2f%n", total);
     }
